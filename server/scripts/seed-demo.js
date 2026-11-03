@@ -4,7 +4,7 @@
  *   npm run seed:demo                 add the demo products (safe to re-run; existing ones are skipped)
  *   npm run seed:demo -- --remove     delete every demo product, its images and the demo category
  *
- * Demo data is NOT VR Enterprises inventory: names carry "(DEMO)", SKUs start with "DEMO-", and the
+ * Demo data is NOT VR Water Solutions inventory: names carry "(DEMO)", SKUs start with "DEMO-", and the
  * descriptions say so. Prices and stock are invented purely for layout. Everything is editable or
  * deletable in the admin dashboard. Refuses to run when NODE_ENV=production.
  */
@@ -23,7 +23,7 @@ import { addImages, createProduct, deleteProduct, updateProduct } from '../src/s
 
 const imageDir = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../seed/demo-images');
 const DEMO_CATEGORY = 'Demo Water Purifiers';
-const DEMO_NOTE = 'DEMO DATA: sample listing used only to preview the layout. It is not a real VR Enterprises product, price or specification.';
+const DEMO_NOTE = 'DEMO DATA: sample listing used only to preview the layout. It is not a real VR Water Solutions product, price or specification.';
 
 // Prices and stock are invented for layout only. Stock values are varied on purpose so the
 // low-stock and out-of-stock alerts can be seen.

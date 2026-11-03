@@ -15,5 +15,5 @@ export function Wordmark({ className, inverted = false }) {
     );
   }
   // Default brand logo (public/brand). The light version is for dark backgrounds.
-  return <img src={inverted ? '/brand/logo-light.svg' : '/brand/logo.svg'} alt={name} width="131" height="40" className={cn('h-9 w-auto max-w-[12rem]', className)} />;
+  return <img src={inverted ? '/brand/logo-light.svg' : '/brand/logo.svg'} alt={name} width="146" height="40" className={cn('h-9 w-auto max-w-[12rem]', className)} />;
 }

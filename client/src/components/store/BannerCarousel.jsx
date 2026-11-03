@@ -2,6 +2,7 @@ import { ArrowRight, ChevronLeft, ChevronRight } from 'lucide-react';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { cn } from '../../lib/cn.js';
+import { useBusiness } from '../../features/business/useBusiness.js';
 import { Container } from '../ui/Container.jsx';
 import { Reveal } from '../ui/Reveal.jsx';
 import { SafeImage } from '../ui/SafeImage.jsx';
@@ -26,6 +27,7 @@ function BannerLink({ banner }) {
  * Renders nothing when there are no active banners.
  */
 export function BannerCarousel({ banners, asH1 = false }) {
+  const business = useBusiness();
   const [index, setIndex] = useState(0);
   if (!banners?.length) return null;
   const Heading = asH1 ? 'h1' : 'h2';
@@ -41,7 +43,7 @@ export function BannerCarousel({ banners, asH1 = false }) {
           {banners.map((b, i) => (
             <div key={b.id} role="group" aria-roledescription="slide" aria-label={`${i + 1} of ${count}`} hidden={i !== current} className="grid items-center gap-10 lg:grid-cols-[1fr_1.15fr] lg:gap-16">
               <div className="order-2 lg:order-1">
-                <p className="eyebrow-line mb-6 text-xs font-bold uppercase tracking-[0.24em] text-accent-500">VR Enterprises</p>
+                <p className="eyebrow-line mb-6 text-xs font-bold uppercase tracking-[0.24em] text-accent-500">{business.name}</p>
                 <Reveal variant="lines" key={`${b.id}-${current === i}`}>
                   <Heading aria-label={b.title} className="text-[2.9rem] leading-[0.98] sm:text-7xl lg:text-[5.4rem]">
                     {b.title.split(/(?<=\.)\s+/).map((part, n) => (

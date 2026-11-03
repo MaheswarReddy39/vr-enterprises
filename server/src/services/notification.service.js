@@ -51,7 +51,7 @@ export function notify(kind, booking, status = '') {
 async function enqueue(kind, booking, status) {
   const settings = await getSettings();
   const cfg = getConfig();
-  const ctx = { booking, status, business: settings.business.name || 'VR Enterprises', contact: settings.business.phone || cfg.businessContact || '-' };
+  const ctx = { booking, status, business: settings.business.name || 'VR Water Solutions', contact: settings.business.phone || cfg.businessContact || '-' };
   const message = kind === 'admin_new_booking' ? adminAlert(ctx) : customerUpdate(ctx);
   const dedupeKey = `${booking.bookingId}:${kind}${kind === 'customer_status' ? `:${status}` : ''}`;
 

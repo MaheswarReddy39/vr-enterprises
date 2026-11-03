@@ -6,6 +6,7 @@ import { Seo } from '../components/Seo.jsx';
 import { ProductGallery } from '../components/store/ProductGallery.jsx';
 import { QuantityPicker } from '../components/store/QuantityPicker.jsx';
 import { WishlistButton } from '../components/store/WishlistButton.jsx';
+import { useBusiness } from '../features/business/useBusiness.js';
 import { useCart } from '../features/cart/CartContext.jsx';
 import { AvailabilityLabel, PriceTag, ProductCard } from '../components/store/ProductCard.jsx';
 import { Badge } from '../components/ui/Badge.jsx';
@@ -54,6 +55,7 @@ function Specifications({ groups }) {
 }
 
 export default function ProductPage() {
+  const business = useBusiness();
   const { slug } = useParams();
   const [quantity, setQuantity] = useState(1);
   const [note, setNote] = useState(null); // { type: 'added' | 'error', text }
@@ -109,7 +111,7 @@ export default function ProductPage() {
 
   const unpriced = !(p.price > 0); // the owner has not entered a price: the product cannot be booked yet
   const out = p.availability === 'out_of_stock' || unpriced;
-  const description = p.shortDescription || (p.description ? p.description.slice(0, 155) : `${p.name} from VR Enterprises.`);
+  const description = p.shortDescription || (p.description ? p.description.slice(0, 155) : `${p.name} from ${business.name}.`);
   const jsonLd = p.isDemo
     ? null
     : {

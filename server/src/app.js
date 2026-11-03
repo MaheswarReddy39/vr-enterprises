@@ -48,7 +48,7 @@ export function createApp() {
 
   // The API lives under /api/v1. The bare address answers with a small pointer instead of a confusing 404 (Render, uptime
   // monitors and people open it to check that the service is up).
-  app.get('/', (_req, res) => res.json({ name: 'VR Enterprises API', status: 'ok', api: '/api/v1', health: '/api/v1/health/ready' }));
+  app.get('/', (_req, res) => res.json({ name: 'VR Water Solutions API', status: 'ok', api: '/api/v1', health: '/api/v1/health/ready' }));
 
   app.use('/api/v1', apiRouter);
 

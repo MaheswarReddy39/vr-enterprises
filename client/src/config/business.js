@@ -8,7 +8,7 @@
 //
 // (A later milestone moves this into the admin "Store settings" so it can be edited without code.)
 export const business = {
-  name: 'VR Enterprises',
+  name: 'VR Water Solutions',
   category: 'Water purifiers',
 
   // Shows the slim "preview site" bar and tells search engines not to index the site.

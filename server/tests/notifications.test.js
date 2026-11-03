@@ -92,7 +92,7 @@ describe('WhatsApp notifications', { skip: skipReason }, () => {
       assert.equal(call.body.type, 'template');
       assert.deepEqual([call.body.template.name, call.body.template.language.code], ['vr_new_booking_alert', 'en']);
       const text = call.body.template.components[0].parameters.map((x) => x.text);
-      assert.deepEqual(text, ['VR Enterprises', res.body.booking.bookingId, 'Cara Customer', '98765 43210', `${p.name} x 2`, '9346411218']);
+      assert.deepEqual(text, ['VR Water Solutions', res.body.booking.bookingId, 'Cara Customer', '98765 43210', `${p.name} x 2`, '9346411218']);
       const saved = await Notification.findOne({ bookingId: res.body.booking.bookingId });
       assert.deepEqual([saved.kind, saved.state, saved.attempts, saved.providerMessageId], ['admin_new_booking', 'sent', 1, 'wamid.HBgM1']);
     });
@@ -168,7 +168,7 @@ describe('WhatsApp notifications', { skip: skipReason }, () => {
       assert.deepEqual(sent.map((c) => c.body.template.name), Array(3).fill('vr_booking_status_update'));
       const params = sent.map((c) => c.body.template.components[0].parameters.map((x) => x.text));
       assert.deepEqual(params.map((x) => x[4]), ['Confirmed', 'Processing', 'Completed']);
-      assert.deepEqual(params[0], ['VR Enterprises', 'Cara Customer', b.bookingId, `${p.name} x 2`, 'Confirmed', '9346411218']);
+      assert.deepEqual(params[0], ['VR Water Solutions', 'Cara Customer', b.bookingId, `${p.name} x 2`, 'Confirmed', '9346411218']);
     });
 
     it('sends the Rejected update too', async () => {

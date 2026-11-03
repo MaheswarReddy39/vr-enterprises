@@ -2,7 +2,7 @@
   "name": "vr-enterprises",
   "version": "0.1.0",
   "private": true,
-  "description": "VR Enterprises - purifier e-commerce platform (monorepo)",
+  "description": "VR Water Solutions - purifier e-commerce platform (monorepo)",
   "workspaces": [
     "client",
     "server"

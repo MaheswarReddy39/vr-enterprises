@@ -30,7 +30,7 @@ export default function DesignSystemPage() {
     <Container className="py-14">
       <SectionHeading
         eyebrow="Design system"
-        title="VR Enterprises foundation"
+        title="VR Water Solutions foundation"
         description="Placeholder palette and components. Brand colours and logo will be replaced with the official assets."
       />
 

@@ -1,5 +1,5 @@
 /**
- * Loads the real VR Enterprises content: business details, the five purifier products with the supplied photos,
+ * Loads the real VR Water Solutions content: business details, the five purifier products with the supplied photos,
  * and the homepage banner. Safe to re-run: nothing that already exists is overwritten.
  *
  *   npm run seed:vr

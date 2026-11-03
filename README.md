@@ -1,4 +1,4 @@
-# VR Enterprises
+# VR Water Solutions
 
 Premium e-commerce platform for purifier products. Monorepo with a React storefront/admin and an Express API.
 
@@ -35,7 +35,7 @@ scripts/                 root helpers: init-env (npm run setup), preflight (runs
 
 ## Quick start
 
-Prerequisites: Node.js 20+ and MongoDB: either a normal local install (`mongodb://localhost:27017/vr_enterprises`) or a **MongoDB Atlas** cluster. No replica set is needed.
+Prerequisites: Node.js 20+ and MongoDB: either a normal local install (`mongodb://localhost:27017/vr_water_solutions`) or a **MongoDB Atlas** cluster. No replica set is needed.
 
 ```bash
 npm install
@@ -67,7 +67,7 @@ Names end in "(DEMO)", SKUs start with `DEMO-`, descriptions say they are sample
 
 ### Local MongoDB (instead of Atlas)
 
-A normal standalone `mongod` works. Set `MONGODB_URI=mongodb://localhost:27017/vr_enterprises` in `server/.env`. When the site is finished, replace it with your Atlas connection string; nothing else changes.
+A normal standalone `mongod` works. Set `MONGODB_URI=mongodb://localhost:27017/vr_water_solutions` in `server/.env`. When the site is finished, replace it with your Atlas connection string; nothing else changes.
 
 ### Create the first admin
 
@@ -84,7 +84,7 @@ The password is prompted for with hidden input (never passed as an argument). Fo
 
 | Variable                                  | Required            | Purpose                                                              |
 | ----------------------------------------- | ------------------- | -------------------------------------------------------------------- |
-| `MONGODB_URI`                             | yes                 | MongoDB connection string: local `mongodb://localhost:27017/vr_enterprises` or Atlas. Holds data AND images |
+| `MONGODB_URI`                             | yes                 | MongoDB connection string: local `mongodb://localhost:27017/vr_water_solutions` or Atlas. Holds data AND images |
 | `JWT_ACCESS_SECRET`, `JWT_REFRESH_SECRET` | yes                 | 32+ chars each, must differ (`npm run setup` generates them)          |
 | `PORT`                                    | no (5000)           | API port                                                             |
 | `CLIENT_URL`                              | no (localhost:5173) | Allowed CORS origin(s), comma-separated                              |
@@ -147,7 +147,7 @@ Pointing `TEST_MONGODB_URI` at a standalone server fails loudly rather than pass
 
 ## Design system
 
-Tokens live in `client/src/index.css` (`@theme`). The palette (deep teal + brass), the "VR Enterprises" wordmark and the font pairing (Fraunces headings, Inter body) are **placeholders** until the official logo and brand colours are supplied; swapping the token values restyles everything. No product data, contact details or policies are hardcoded: these are managed from the admin.
+Tokens live in `client/src/index.css` (`@theme`): warm white pages, charcoal text, aqua as the brand colour, copper as the accent, Bricolage Grotesque headings and Inter body text.
 
 ## Storefront (Milestone 3)
 
@@ -252,7 +252,7 @@ WhatsApp only lets a business START a conversation with a pre-approved **message
    New booking alert from {{1}}: booking {{2}} was submitted by {{3}} (mobile {{4}}) for {{5}}. Please review it in the admin panel. Business contact: {{6}}.
    ```
 
-   Variables: 1 business name, 2 booking ID, 3 customer name, 4 customer mobile, 5 product and quantity, 6 business contact number. Sample values for the form: VR Enterprises, VR-BK-261103-ABC234, Asha Rao, 9876543210, Aqua Pearl Copper RO Water Purifier x 2, 9876543210.
+   Variables: 1 business name, 2 booking ID, 3 customer name, 4 customer mobile, 5 product and quantity, 6 business contact number. Sample values for the form: VR Water Solutions, VR-BK-261103-ABC234, Asha Rao, 9876543210, Aqua Pearl Copper RO Water Purifier x 2, 9876543210.
 
    **`vr_booking_status_update`** (to the customer), body:
 
@@ -260,7 +260,7 @@ WhatsApp only lets a business START a conversation with a pre-approved **message
    Update from {{1}}: Hello {{2}}, your booking {{3}} for {{4}} is now {{5}}. For any questions please call {{6}}.
    ```
 
-   Variables: 1 business name, 2 customer name, 3 booking ID, 4 product and quantity, 5 status (Confirmed, Rejected, Processing or Completed), 6 business contact number. Sample values: VR Enterprises, Asha Rao, VR-BK-261103-ABC234, Aqua Pearl Copper RO Water Purifier x 2, Confirmed, 9876543210.
+   Variables: 1 business name, 2 customer name, 3 booking ID, 4 product and quantity, 5 status (Confirmed, Rejected, Processing or Completed), 6 business contact number. Sample values: VR Water Solutions, Asha Rao, VR-BK-261103-ABC234, Aqua Pearl Copper RO Water Purifier x 2, Confirmed, 9876543210.
 
    If Meta asks you to change the wording, keep the variables and their order, or change the order in `server/src/services/notification.service.js` (the two template functions at the top).
 
@@ -315,7 +315,7 @@ If the Meta messages fail, the reason appears next to the message in the admin p
 
 Nothing here is deployed for you; these are the steps for the owner. Never commit `.env` files (they are git-ignored) and never paste secrets into chat or code.
 
-1. **Atlas:** create a free cluster, a database user, and under Network Access allow Render (or `0.0.0.0/0` for the free tier). Copy the connection string, with a database name: `mongodb+srv://<user>:<password>@<cluster>.mongodb.net/vr_enterprises?retryWrites=true&w=majority`.
+1. **Atlas:** create a free cluster, a database user, and under Network Access allow Render (or `0.0.0.0/0` for the free tier). Copy the connection string, with a database name: `mongodb+srv://<user>:<password>@<cluster>.mongodb.net/vr_water_solutions?retryWrites=true&w=majority`.
 2. **Render (API):** New > Blueprint, pick this repository (it reads `render.yaml`), then fill in the two values it asks for: `MONGODB_URI` and `CLIENT_URL` (your Vercel address, for example `https://vr-enterprises.vercel.app`). The JWT secrets are generated by Render. Check `https://<service>.onrender.com/api/v1/health/ready`. The free plan sleeps when idle, so the first request after a pause is slow.
 3. **Vercel (website):** import the repository and set **Root Directory** to `client`. Vercel reads `vercel.json` only from the Root Directory, so the file that counts is **`client/vercel.json`** (build output `dist`); `vercel.json` at the repository root is for a project whose Root Directory is the repository root (output `client/dist`). Both forward `/api` to the Render service (`https://vr-enterprises.onrender.com`; change that address if your service has another name) and send every other path to the single-page app. **Symptom if the file is not picked up:** `/api/...` and even pages such as `/shop` or `/admin/login` return Vercel's own `NOT_FOUND` while `/` works. Leave `VITE_API_BASE_URL` unset. Also set `CLIENT_URL` on Render to your Vercel address (for example `https://vr-enterprises-zeta.vercel.app`).
 4. **First admin:** in the Render service shell, or locally with the Atlas string in `server/.env`, run `npm run create-admin` and choose your own strong password. Sign in at `/admin/login`.

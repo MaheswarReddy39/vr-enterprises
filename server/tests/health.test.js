@@ -9,7 +9,7 @@ describe('API without a database connection', () => {
   it('GET /api/v1 returns API info', async () => {
     const res = await request(app).get('/api/v1');
     assert.equal(res.status, 200);
-    assert.equal(res.body.name, 'VR Enterprises API');
+    assert.equal(res.body.name, 'VR Water Solutions API');
   });
 
   it('GET /api/v1/health reports liveness and dependency status', async () => {

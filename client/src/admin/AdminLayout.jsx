@@ -21,7 +21,7 @@ export function AdminLayout() {
   // The unread count also shows in the browser tab title, so a new booking is noticed even from another tab.
   useEffect(() => {
     const previous = document.title;
-    document.title = unread > 0 ? `(${unread}) New bookings | VR Enterprises Admin` : 'VR Enterprises Admin';
+    document.title = unread > 0 ? `(${unread}) New bookings | VR Water Solutions Admin` : 'VR Water Solutions Admin';
     return () => { document.title = previous; };
   }, [unread]);
   const toast = useToast();

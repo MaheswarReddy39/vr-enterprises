@@ -9,7 +9,7 @@ import storeRoutes from './store.routes.js';
 const router = Router();
 
 router.get('/', (_req, res) => {
-  res.json({ name: 'VR Enterprises API', version: 'v1' });
+  res.json({ name: 'VR Water Solutions API', version: 'v1' });
 });
 router.use('/health', healthRoutes);
 router.use('/media', mediaRoutes);

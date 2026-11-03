@@ -37,14 +37,14 @@ describe('home page', () => {
     renderAt('/');
 
     expect(await screen.findByRole('heading', { level: 1, name: /right water purifier/i })).toBeInTheDocument();
-    for (const heading of ['Featured purifiers', 'Shop by category', 'Why choose VR Enterprises', 'Have a question? Send an enquiry.']) {
+    for (const heading of ['Featured purifiers', 'Shop by category', 'Why choose VR Water Solutions', 'Have a question? Send an enquiry.']) {
       expect(screen.getByRole('heading', { name: heading })).toBeInTheDocument();
     }
     expect((await screen.findAllByText('Beta Purifier')).length).toBeGreaterThan(0);
     expect(await screen.findByRole('link', { name: /Water\s*4 products/ })).toHaveAttribute('href', '/shop?category=water');
     expect(screen.queryByRole('heading', { name: 'What customers say' })).not.toBeInTheDocument();
     expect(screen.queryByText(/Demo content/)).not.toBeInTheDocument();
-    expect(document.title).toBe('VR Enterprises | Water purifiers');
+    expect(document.title).toBe('VR Water Solutions | Water purifiers');
   });
 
   it('keeps the page usable and offers a retry when the API is down', async () => {
@@ -154,7 +154,7 @@ describe('product page', () => {
     expect(screen.getByText('Second paragraph.')).toBeInTheDocument();
     expect(await screen.findByRole('heading', { name: 'You may also like' })).toBeInTheDocument();
     expect(screen.getByRole('heading', { name: 'Beta Purifier' })).toBeInTheDocument();
-    expect(document.title).toBe('Alpha Purifier | VR Enterprises');
+    expect(document.title).toBe('Alpha Purifier | VR Water Solutions');
   });
 
   it('switches gallery images with accessible thumbnail buttons', async () => {
@@ -266,7 +266,7 @@ describe('information pages', () => {
   it.each(pages)('%s renders with a heading, a title and honest content (no leftover placeholders)', async (path, heading) => {
     renderAt(path);
     expect(await screen.findByRole('heading', { level: 1, name: heading })).toBeInTheDocument();
-    expect(document.title).toBe(`${heading} | VR Enterprises`);
+    expect(document.title).toBe(`${heading} | VR Water Solutions`);
     expect(document.querySelector('meta[name="robots"][content*="noindex"]')).toBeNull();
     // No bracketed prompts anywhere: details that were not supplied (opening hours) are simply not shown.
     expect(within(screen.getByRole('main')).queryAllByText(/\[.+\]/)).toHaveLength(0);

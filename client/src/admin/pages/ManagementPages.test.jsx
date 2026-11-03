@@ -40,12 +40,12 @@ const stats = {
   recentBookings: [booking({ isRead: true, status: 'confirmed' })],
 };
 const customer = (over = {}) => ({ id: 'c1', name: 'Cara Customer', email: 'cara@example.com', phone: '98765 43210', isActive: true, createdAt: '2026-09-01T00:00:00Z', bookingCount: 2, addresses: [{ id: 'a1', name: 'Cara', line1: '1 Test Road', city: 'Town', state: 'State', postalCode: '560001' }], recentBookings: [booking({ isRead: true })], ...over });
-const baseSettings = { business: { name: 'VR Enterprises', tagline: '', address: '', phone: '', email: '', hours: '', gstin: '', logo: null } };
+const baseSettings = { business: { name: 'VR Water Solutions', tagline: '', address: '', phone: '', email: '', hours: '', gstin: '', logo: null } };
 const pageOf = (items) => ({ items, pagination: { page: 1, limit: 15, total: items.length, totalPages: 1 } });
 
 const as = (user) => ({
   'POST /auth/refresh': () => json(200, { accessToken: 'tok', user }),
-  'GET /store/settings': () => json(200, { settings: { name: 'VR Enterprises', phone: '', email: '', address: '', hours: '', logo: null } }),
+  'GET /store/settings': () => json(200, { settings: { name: 'VR Water Solutions', phone: '', email: '', address: '', hours: '', logo: null } }),
   'GET /admin/bookings/unread-count': () => json(200, { unreadCount: 2 }),
 });
 const renderAt = (path) => render(<MemoryRouter initialEntries={[path]}><App /></MemoryRouter>);

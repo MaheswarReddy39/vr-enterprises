@@ -19,7 +19,7 @@ Real, royalty-free product photographs were searched for on Unsplash and Pexels.
 
 * Almost every Unsplash "water purifier" result is **brand-owned product photography** (a commercial purifier
   manufacturer's own pictures, with visible logos). Although hosted under the Unsplash licence, presenting another
-  company's branded product as sample VR Enterprises stock would be misleading, so they were deliberately not used.
+  company's branded product as sample VR Water Solutions stock would be misleading, so they were deliberately not used.
 * Pexels results were mostly bottles, glasses, sinks and **industrial treatment plants**, not purifiers.
 * Unsplash also blocks scripted downloads with a bot challenge, which this project does not work around.
 

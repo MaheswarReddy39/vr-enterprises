@@ -11,9 +11,9 @@ const SUMMARY_NOTICE = 'This is a plain summary of how the website works today. 
 export const pages = {
   about: {
     title: 'About us',
-    description: 'About VR Enterprises, a seller of water purifiers in Dharmavaram, Andhra Pradesh.',
+    description: 'About VR Water Solutions, a seller of water purifiers in Dharmavaram, Andhra Pradesh.',
     sections: [
-      { heading: 'Who we are', body: ['VR Enterprises sells water purifiers from Yerraguntla Circle, Dharmavaram, Andhra Pradesh, India.'] },
+      { heading: 'Who we are', body: ['VR Water Solutions sells water purifiers from Yerraguntla Circle, Dharmavaram, Andhra Pradesh, India.'] },
       { heading: 'What we offer', body: ['Browse our range in the shop. Each product page lists its availability and the specifications we have been able to verify.', 'To get a purifier, send a booking request on this website. We then contact you to confirm the details.'] },
       { heading: 'Get in touch', body: ['Phone, email and address are on the contact page. You are welcome to ask us about any product before you book.'] },
     ],
@@ -21,7 +21,7 @@ export const pages = {
 
   'shipping-policy': {
     title: 'Shipping policy',
-    description: 'Delivery information for VR Enterprises bookings.',
+    description: 'Delivery information for VR Water Solutions bookings.',
     notice: SUMMARY_NOTICE,
     sections: [
       { heading: 'How delivery works', body: ['This website takes booking requests, not payments. After you submit a booking we contact you on the mobile number you gave to confirm the product, the delivery address and the arrangements.'] },
@@ -33,10 +33,10 @@ export const pages = {
 
   'return-refund-policy': {
     title: 'Return and refund policy',
-    description: 'Return, refund and warranty information for VR Enterprises.',
+    description: 'Return, refund and warranty information for VR Water Solutions.',
     notice: SUMMARY_NOTICE,
     sections: [
-      { heading: 'No online payment', body: ['No payment is taken on this website, so there is nothing to refund through the website. Payment is arranged with VR Enterprises when your booking is confirmed.'] },
+      { heading: 'No online payment', body: ['No payment is taken on this website, so there is nothing to refund through the website. Payment is arranged with VR Water Solutions when your booking is confirmed.'] },
       { heading: 'Returns and refunds', body: ['Return and refund terms are not published online yet. Please ask us about them before you confirm a booking.'] },
       { heading: 'Warranty', body: ['Warranty terms differ by product and are not the same for every purifier. Ask us for the warranty that applies to the product you are interested in before you confirm a booking.'] },
       { heading: 'Questions', body: ['Contact us using the details on the contact page.'] },
@@ -45,7 +45,7 @@ export const pages = {
 
   'privacy-policy': {
     title: 'Privacy policy',
-    description: 'How VR Enterprises handles personal information on this website.',
+    description: 'How VR Water Solutions handles personal information on this website.',
     notice: SUMMARY_NOTICE,
     sections: [
       { heading: 'What we collect', body: ['Enquiries: your name, email address, optional phone number, your message and the product you asked about, if any.', 'Accounts: your name, email address, optional phone number and a password, which is stored only in scrambled (hashed) form.', 'Bookings: your name, mobile number, delivery address and the products and quantities you booked.'] },
@@ -57,7 +57,7 @@ export const pages = {
 
   'terms-and-conditions': {
     title: 'Terms and conditions',
-    description: 'Terms of using the VR Enterprises website and booking products.',
+    description: 'Terms of using the VR Water Solutions website and booking products.',
     notice: SUMMARY_NOTICE,
     sections: [
       { heading: 'Bookings', body: ['A booking on this website is a request, not a confirmed sale. We contact you to confirm the product, price, delivery and payment arrangements. We may decline a booking, for example if a product is not available.'] },

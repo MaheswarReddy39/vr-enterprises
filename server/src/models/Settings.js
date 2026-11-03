@@ -9,7 +9,7 @@ const settingsSchema = new Schema(
   {
     key: { type: String, default: 'store', unique: true },
     business: {
-      name: { type: String, trim: true, maxlength: 100, default: 'VR Enterprises' },
+      name: { type: String, trim: true, maxlength: 100, default: 'VR Water Solutions' },
       tagline: text(120),
       address: text(500),
       phone: text(30),
