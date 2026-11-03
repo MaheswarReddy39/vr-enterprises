@@ -7,6 +7,7 @@ services:
     buildCommand: npm install
     startCommand: npm run start -w server
     healthCheckPath: /api/v1/health/ready
+    # Do NOT add PORT (Render supplies it) and do NOT paste your local server/.env into Render: it contains NODE_ENV=development.
     envVars:
       - key: NODE_ENV
         value: production

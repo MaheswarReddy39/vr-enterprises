@@ -131,6 +131,12 @@ $env:TEST_MONGODB_URI="mongodb://localhost:27017/"; npm test      # PowerShell
 
 Pointing `TEST_MONGODB_URI` at a standalone server fails loudly rather than passing misleadingly.
 
+## Troubleshooting the Render deployment
+
+- **Opening the bare address (`https://<service>.onrender.com/`)**: it answers with a small JSON pointer. The API itself lives under `/api/v1`. Check `/api/v1/health/ready` (should say `"status":"ready"` and `"environment":"production"`), then `/api/v1/store/settings`, `/api/v1/store/products?featured=true&limit=4`, `/api/v1/store/categories` and `/api/v1/store/banners`. Older builds returned `404 Route not found: GET /` at the bare address; that was not a fault.
+- **`"environment":"development"` in the health response, or a startup warning that NODE_ENV is not production**: the Render environment has `NODE_ENV=development`, usually because the local `server/.env` was pasted into Render. In Render > Environment set `NODE_ENV=production`, delete any `PORT` variable (Render provides it) and redeploy. In development mode the refresh cookie is not marked Secure, error responses include debug details and client IPs are wrong behind the proxy.
+- **Startup log says `localhost`**: ignore the word; the server listens on all interfaces. Older builds printed `API listening on http://localhost:<port>` even on Render.
+
 ## Troubleshooting `npm run dev`
 
 - **"Lifecycle script `dev` failed ... command failed vite"** after you press Ctrl+C is just npm reporting that the process was stopped; it is not a Vite error. If Vite printed its `Local:` URL and served pages, Vite was working.

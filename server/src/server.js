@@ -18,7 +18,12 @@ async function main() {
 
   await connectDB();
   const server = createApp().listen(env.PORT, () => {
-    console.log(`API listening on http://localhost:${env.PORT} (${env.NODE_ENV})`);
+    // The server listens on every network interface (what a host such as Render needs), not only on localhost.
+    console.log(`API listening on port ${env.PORT} (NODE_ENV=${env.NODE_ENV})`);
+    // Render sets RENDER=true. A hosted service that is not in production mode has insecure cookies and verbose errors.
+    if (process.env.RENDER && !env.isProduction) {
+      console.warn('WARNING: this is running on Render but NODE_ENV is "' + env.NODE_ENV + '", not "production". In the Render dashboard (Environment) set NODE_ENV=production and remove any PORT you added, then redeploy.');
+    }
   });
 
   // Crash recovery: roll back any booking confirmation that was interrupted (see booking.service.js), now and every 5 minutes.

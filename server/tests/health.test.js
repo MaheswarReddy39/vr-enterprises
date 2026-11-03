@@ -32,6 +32,12 @@ describe('API without a database connection', () => {
     assert.equal(res.body.status, 'not_ready');
   });
 
+  it('GET / answers with a pointer to the API instead of a 404', async () => {
+    const res = await request(app).get('/');
+    assert.equal(res.status, 200);
+    assert.deepEqual([res.body.status, res.body.api], ['ok', '/api/v1']);
+  });
+
   it('returns a JSON 404 for unknown routes', async () => {
     const res = await request(app).get('/api/v1/does-not-exist');
     assert.equal(res.status, 404);
