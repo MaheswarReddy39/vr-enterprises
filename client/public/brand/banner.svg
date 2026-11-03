@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" width="1920" height="1080" role="img" aria-label="Water drop illustration">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F6F2EA"/><stop offset="1" stop-color="#E3F3F6"/></linearGradient>
+    <linearGradient id="drop" x1="0.15" y1="0" x2="0.85" y2="1">
+      <stop offset="0" stop-color="#8EE3F0"/><stop offset="0.45" stop-color="#22B5CF"/><stop offset="1" stop-color="#066A7F"/>
+    </linearGradient>
+    <clipPath id="clip"><path d="M0 -340C0 -340 -270 -40 -270 150A270 270 0 0 0 270 150C270 -40 0 -340 0 -340Z"/></clipPath>
+  </defs>
+  <rect width="1920" height="1080" fill="url(#bg)"/>
+  <g>
+    <path d="M0 90 C 420 60, 760 130, 1200 88 S 1700 50, 1920 96" fill="none" stroke="#17191C" stroke-opacity=".05" stroke-width="1.5"/>
+    <path d="M0 152 C 420 122, 760 192, 1200 150 S 1700 112, 1920 158" fill="none" stroke="#17191C" stroke-opacity=".05" stroke-width="1.5"/>
+    <path d="M0 214 C 420 184, 760 254, 1200 212 S 1700 174, 1920 220" fill="none" stroke="#17191C" stroke-opacity=".05" stroke-width="1.5"/>
+    <path d="M0 276 C 420 246, 760 316, 1200 274 S 1700 236, 1920 282" fill="none" stroke="#17191C" stroke-opacity=".05" stroke-width="1.5"/>
+    <path d="M0 338 C 420 308, 760 378, 1200 336 S 1700 298, 1920 344" fill="none" stroke="#17191C" stroke-opacity=".05" stroke-width="1.5"/>
+    <path d="M0 400 C 420 370, 760 440, 1200 398 S 1700 360, 1920 406" fill="none" stroke="#17191C" stroke-opacity=".05" stroke-width="1.5"/>
+    <path d="M0 462 C 420 432, 760 502, 1200 460 S 1700 422, 1920 468" fill="none" stroke="#17191C" stroke-opacity=".05" stroke-width="1.5"/>
+    <path d="M0 524 C 420 494, 760 564, 1200 522 S 1700 484, 1920 530" fill="none" stroke="#17191C" stroke-opacity=".05" stroke-width="1.5"/>
+    <path d="M0 586 C 420 556, 760 626, 1200 584 S 1700 546, 1920 592" fill="none" stroke="#17191C" stroke-opacity=".05" stroke-width="1.5"/>
+    <path d="M0 648 C 420 618, 760 688, 1200 646 S 1700 608, 1920 654" fill="none" stroke="#17191C" stroke-opacity=".05" stroke-width="1.5"/>
+    <path d="M0 710 C 420 680, 760 750, 1200 708 S 1700 670, 1920 716" fill="none" stroke="#17191C" stroke-opacity=".05" stroke-width="1.5"/>
+    <path d="M0 772 C 420 742, 760 812, 1200 770 S 1700 732, 1920 778" fill="none" stroke="#17191C" stroke-opacity=".05" stroke-width="1.5"/>
+    <path d="M0 834 C 420 804, 760 874, 1200 832 S 1700 794, 1920 840" fill="none" stroke="#17191C" stroke-opacity=".05" stroke-width="1.5"/>
+    <path d="M0 896 C 420 866, 760 936, 1200 894 S 1700 856, 1920 902" fill="none" stroke="#17191C" stroke-opacity=".05" stroke-width="1.5"/>
+  </g>
+  <g>
+    <ellipse cx="1130" cy="905" rx="150" ry="22" fill="none" stroke="#B4693A" stroke-opacity="0.55" stroke-width="2"/>
+    <ellipse cx="1130" cy="905" rx="268" ry="37" fill="none" stroke="#B4693A" stroke-opacity="0.50" stroke-width="2"/>
+    <ellipse cx="1130" cy="905" rx="386" ry="52" fill="none" stroke="#B4693A" stroke-opacity="0.45" stroke-width="2"/>
+    <ellipse cx="1130" cy="905" rx="504" ry="67" fill="none" stroke="#B4693A" stroke-opacity="0.40" stroke-width="2"/>
+    <ellipse cx="1130" cy="905" rx="622" ry="82" fill="none" stroke="#B4693A" stroke-opacity="0.35" stroke-width="2"/>
+    <ellipse cx="1130" cy="905" rx="740" ry="97" fill="none" stroke="#B4693A" stroke-opacity="0.30" stroke-width="2"/>
+    <ellipse cx="1130" cy="905" rx="858" ry="112" fill="none" stroke="#B4693A" stroke-opacity="0.25" stroke-width="2"/>
+    <ellipse cx="1130" cy="905" rx="976" ry="127" fill="none" stroke="#B4693A" stroke-opacity="0.20" stroke-width="2"/>
+    <ellipse cx="1130" cy="905" rx="1094" ry="142" fill="none" stroke="#B4693A" stroke-opacity="0.15" stroke-width="2"/>
+  </g>
+  <g transform="translate(1130 470)">
+    <path d="M0 -340C0 -340 -270 -40 -270 150A270 270 0 0 0 270 150C270 -40 0 -340 0 -340Z" fill="none" stroke="#B4693A" stroke-width="3" transform="translate(30 22)"/>
+    <path d="M0 -340C0 -340 -270 -40 -270 150A270 270 0 0 0 270 150C270 -40 0 -340 0 -340Z" fill="url(#drop)"/>
+    <g clip-path="url(#clip)">
+      <path d="M-300 70C-170 30 -40 110 90 70S230 30 300 60V420H-300Z" fill="#fff" fill-opacity=".16"/>
+      <path d="M-300 150C-170 110 -40 190 90 150S230 110 300 140V420H-300Z" fill="#17191C" fill-opacity=".10"/>
+    </g>
+    <path d="M-168 -4C-204 46 -218 104 -210 168" fill="none" stroke="#fff" stroke-opacity=".85" stroke-width="14" stroke-linecap="round"/>
+    <circle cx="-132" cy="-50" r="9" fill="#fff" fill-opacity=".9"/>
+  </g>
+  <path d="M1555 180c0 0-26 33-26 53a26 26 0 0 0 52 0c0-20-26-53-26-53Z" fill="#B4693A" fill-opacity=".85"/>
+  <path d="M760 250c0 0-14 18-14 29a14 14 0 0 0 28 0c0-11-14-29-14-29Z" fill="#22B5CF" fill-opacity=".7"/>
+</svg>

@@ -1,0 +1,31 @@
+{
+  "name": "vr-enterprises",
+  "version": "0.1.0",
+  "private": true,
+  "description": "VR Enterprises - purifier e-commerce platform (monorepo)",
+  "workspaces": [
+    "client",
+    "server"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "setup": "node scripts/init-env.mjs",
+    "predev": "node scripts/preflight.mjs",
+    "dev": "concurrently -k -n api,web -c blue,green \"npm run dev -w server\" \"npm run dev -w client\"",
+    "dev:server": "npm run dev -w server",
+    "dev:client": "npm run dev -w client",
+    "build": "npm run build -w client",
+    "test": "npm run test -w server && npm run test -w client",
+    "create-admin": "npm run create-admin -w server --",
+    "seed:demo": "npm run seed:demo -w server --",
+    "seed:vr": "npm run seed:vr -w server"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.0"
+  },
+  "overrides": {
+    "vite": "^8.3.5"
+  }
+}

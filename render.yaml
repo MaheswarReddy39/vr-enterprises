@@ -1,0 +1,35 @@
+# Render blueprint for the API. The website is deployed separately on Vercel (see vercel.json and README.md).
+services:
+  - type: web
+    name: vr-enterprises-api
+    runtime: node
+    plan: free
+    buildCommand: npm install
+    startCommand: npm run start -w server
+    healthCheckPath: /api/v1/health/ready
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: NODE_VERSION
+        value: 20
+      # Secrets and owner-specific values are entered in the Render dashboard; they are never stored in this file.
+      - key: MONGODB_URI
+        sync: false
+      - key: JWT_ACCESS_SECRET
+        generateValue: true
+      - key: JWT_REFRESH_SECRET
+        generateValue: true
+      # Your Vercel site address, for example https://vr-enterprises.vercel.app (several can be comma-separated).
+      - key: CLIENT_URL
+        sync: false
+      # vercel.json forwards /api to this service, so the browser only ever talks to the Vercel domain (same-origin).
+      - key: COOKIE_SAME_SITE
+        value: lax
+      # Two proxies sit in front of the API (Vercel, then Render), so real client IPs for rate limiting need 2 hops.
+      - key: TRUST_PROXY_HOPS
+        value: 2
+      # WhatsApp (optional until you finish the Meta setup in README.md). Enter the values in the Render dashboard.
+      - key: WHATSAPP_ACCESS_TOKEN
+        sync: false
+      - key: WHATSAPP_PHONE_NUMBER_ID
+        sync: false
