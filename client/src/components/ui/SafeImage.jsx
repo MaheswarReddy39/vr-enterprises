@@ -7,7 +7,7 @@ import { cn } from '../../lib/cn.js';
  * <img> for API-served images. Resolves site-relative media paths against the API origin and, if the
  * file is missing or fails to load, shows a neutral placeholder instead of a broken-image icon.
  */
-export function SafeImage({ src, alt = '', className, ...props }) {
+export function SafeImage({ src, alt = '', className, onError, ...props }) {
   const [failed, setFailed] = useState(false);
   useEffect(() => setFailed(false), [src]);
 
@@ -19,5 +19,18 @@ export function SafeImage({ src, alt = '', className, ...props }) {
     );
   }
   // blob: and data: URLs (local previews) pass through untouched.
-  return <img src={mediaUrl(src)} alt={alt} className={className} loading="lazy" onError={() => setFailed(true)} {...props} />;
+  return (
+    <img
+      src={mediaUrl(src)}
+      alt={alt}
+      className={className}
+      loading="lazy"
+      decoding="async"
+      onError={(event) => {
+        setFailed(true);
+        onError?.(event);
+      }}
+      {...props}
+    />
+  );
 }
