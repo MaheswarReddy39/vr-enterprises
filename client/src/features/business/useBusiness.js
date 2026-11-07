@@ -29,7 +29,10 @@ const publish = (settings) => {
 export function loadBusiness() {
   return apiFetch('/store/settings', { auth: false })
     .then(({ settings }) => publish(settings))
-    .catch(() => {});
+    .catch((error) => {
+      // The bundled defaults keep the storefront usable when the API is unavailable.
+      console.warn('Business settings could not be loaded; using local defaults.', error);
+    });
 }
 
 /** Called after the admin saves settings so the open site shows them immediately. */

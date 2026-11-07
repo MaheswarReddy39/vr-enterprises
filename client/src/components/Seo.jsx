@@ -11,6 +11,9 @@ export function Seo({ title, description, image, noindex = false }) {
   const business = useBusiness();
   const fullTitle = title ? `${title} | ${business.name}` : `${business.name} | ${business.category}`;
   const hide = noindex || business.isPreview;
+  const canonical = typeof window === 'undefined'
+    ? undefined
+    : `${window.location.origin}${window.location.pathname}`;
   return (
     <>
       <title>{fullTitle}</title>
@@ -20,6 +23,11 @@ export function Seo({ title, description, image, noindex = false }) {
       <meta property="og:type" content="website" />
       <meta property="og:site_name" content={business.name} />
       {image && <meta property="og:image" content={image} />}
+      {canonical && <link rel="canonical" href={canonical} />}
+      <meta name="twitter:card" content={image ? 'summary_large_image' : 'summary'} />
+      <meta name="twitter:title" content={fullTitle} />
+      {description && <meta name="twitter:description" content={description} />}
+      {image && <meta name="twitter:image" content={image} />}
       <meta name="robots" content={hide ? 'noindex, nofollow' : 'index, follow'} />
     </>
   );

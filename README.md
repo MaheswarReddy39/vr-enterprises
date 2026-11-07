@@ -1,5 +1,18 @@
 # VR Water Solutions
 
+## Contributing at no cost
+
+Contributions can be developed and tested locally without paid services. Fork the repository, create a focused branch from `main`, and install Node.js 20+ plus a local MongoDB instance (or use a free MongoDB Atlas cluster):
+
+```bash
+npm install
+npm run setup
+npm test
+npm run build
+```
+
+Do not invent business, policy, testimonial, price, stock, or product claims. Use the existing clearly marked placeholders until the owner supplies verified information. Never commit `.env` files, credentials, customer data, or production secrets. Pull requests should explain the user-visible change and include the tests or build command used.
+
 Premium e-commerce platform for purifier products. Monorepo with a React storefront/admin and an Express API.
 
 **Status: Milestone 6 built, then changed to product booking.** There are **no online payments**: customers book products, the business confirms them and arranges payment itself. Razorpay and invoices have been removed.
