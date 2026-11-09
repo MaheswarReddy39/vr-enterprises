@@ -1,3 +1,8 @@
 User-agent: *
 Disallow: /admin
 Disallow: /api/
+
+User-agent: *
+Allow: /
+
+Sitemap: https://vr-watersolutions.vercel.app/sitemap.xml
